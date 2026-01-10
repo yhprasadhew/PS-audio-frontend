@@ -1,17 +1,22 @@
-import './App.css'
-import { MdBluetoothAudio } from "react-icons/md";
-import { GoGraph } from "react-icons/go";
-import { FiBookOpen } from "react-icons/fi";
-import { FaListUl } from "react-icons/fa";
-import { FaUserShield } from "react-icons/fa";
-
-import AdminPage from './components/AdminPage.jsx';
+// App.jsx
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home/homePage.jsx';
+import AdminPage from './pages/admin/AdminPage.jsx';
 
 function App() {
   return (
-    
-    <div><AdminPage /></div>
-  )
+    <BrowserRouter>
+     
+        <Routes path="/*">
+
+      
+          <Route path="/*" element={<HomePage/>} />
+        <Route path="/admin/*" element={<AdminPage />} />
+        
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
