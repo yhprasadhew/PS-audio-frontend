@@ -2,6 +2,8 @@ import { GoGraph } from "react-icons/go";
 import { FiBookOpen } from "react-icons/fi";
 import { FaListUl, FaUserShield } from "react-icons/fa";
 import { Routes, Route, Link } from "react-router-dom";
+import AdminItemPage from "./adminItems";
+import AddItemPage from "./addItemPage";
 
 export default function AdminPage() {
   return (
@@ -24,10 +26,12 @@ export default function AdminPage() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 bg-red-900 text-white p-5">
+      <div className="flex-1 bg-blue-200 text-white p-5">
         <Routes>
           <Route path="" element={<h1>Dashboard Home</h1>} />
-          <Route path="items" element={<h1>Items Page</h1>} />
+          <Route path="items" element={<AdminItemPage/>} />
+          <Route path="items/add" element={<AddItemPage/>} />
+
           <Route path="booking" element={<h1>Booking Page</h1>} />
           <Route path="users" element={<h1>Users Page</h1>} />
           <Route path="*" element={<h1>404 NOT FOUND</h1>} />
